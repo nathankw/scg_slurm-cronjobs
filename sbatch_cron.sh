@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/bash -eu
 
 #SBATCH --account=gbsc
 #SBATCH --cpus-per-task=1
@@ -13,7 +13,7 @@
 
 module load gbsc/scgpm_seqresults_dnanexus
 
-scgpm_clean_raw_data.py -o org-snyder_encode -d 1
-scgpm_clean_raw_data.py -o org-cescg -d 1
+scgpm_clean_raw_data.py -o org-snyder_encode -d 2
+scgpm_clean_raw_data.py -o org-cescg -d 2
 
 sbatch --begin=noon $0
